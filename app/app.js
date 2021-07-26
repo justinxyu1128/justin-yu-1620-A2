@@ -1,4 +1,4 @@
-const budgets = []
+const budgets = [{title: "Groceries", carrots: 50, apples: 50, total: 100}, {title: "bots", carrots: 50, apples: 50, total: 120}, {title: "cats", carrots: 50, apples: 50, total: 100}]
 $(".wrapper.view2").hide()
 const newbudget = document.querySelector(".button.newbudget")
 newbudget.addEventListener("click", () => {
@@ -10,3 +10,14 @@ allbudgets.addEventListener("click", () => {
     $(".wrapper.view2").hide()
     $(".wrapper.view1").show()
 })
+const totalbudget = document.querySelector(".totalbudget")
+totalbudget.textContent = countTotal(budgets)
+
+function countTotal(array) {
+    let total = 0;
+    for (budget of array) {
+        total += budget["total"];
+    }
+    const totalbudget=`Total Budget: $${total}`
+    return totalbudget;
+}
