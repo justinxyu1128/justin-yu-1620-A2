@@ -22,6 +22,10 @@ h2 {
     grid-row-start: 2;
 }
 
+.title {
+    font-size: 28px;
+}
+
 .nav {
     display: flex;
     background-color: #435875;
@@ -69,6 +73,31 @@ a:active {
     flex-wrap: wrap;
 }
 
+.form {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.budgetform {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    margin-top: 30px;
+}
+
+.budgetform input {
+    margin-bottom: 40px;
+}
+
+.buttonwrapper {
+    grid-column-start: 4;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+}
+
 .card {
     background-color: #333D48;
     font-size: 20px;
@@ -96,3 +125,20 @@ a:active {
     
 }
 
+.button.additem {
+    width: 150px;
+    height: 40px;
+    background-color: #333D48;
+    padding-bottom: 10px;
+
+}
+
+.button.removebudget {
+    background-color: #FE2F20;
+    padding-bottom: 10px;
+}
+
+.items {
+    color: #333D48;
+    margin-bottom: 30px;
+}
