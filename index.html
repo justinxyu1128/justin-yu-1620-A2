@@ -28,17 +28,16 @@
         <div class="form">
             <h2 class="title">Budget Title</h2>
             <p class="items">Carrots $100</p>
-            <p class="items">Apples $100</p>
         </div>
-        <form name="budgetform" class="budgetform">
+        <form name="budgetform" class="budgetform" action="" method="get">
             <input name="title" class="formtitle" value="">
             <input type="submit" class="submit" onclick="event.preventDefault()">
-            <input name="items" value="">
-            <input name="items" value="">
+            <input name="items" value="" placeholder="Carrots $100">
         </form>
         <div class="buttonwrapper">
             <p class="button additem">Add Budget Item</p>
             <p class="button removebudget">Delete Budget</p>
+            <p class="button finalize">Finalize</p>
         </div>
     </div>
 </body>

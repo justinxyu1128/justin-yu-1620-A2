@@ -20,7 +20,27 @@ totalbudget.textContent = countTotal(budgets)
 const additem = document.querySelector(".button.additem")
 additem.addEventListener("click", () => {
     const budgetform = document.querySelector(".budgetform")
-    budgetform.insertAdjacentHTML("beforeend", '<input name="items" value="">')
+    budgetform.insertAdjacentHTML("beforeend", '<input name="items" value="" placeholder="Carrots $100">')
+})
+
+const submit = document.querySelector(".submit")
+submit.addEventListener("click", () => {
+    const formdata = {}
+    let title = document.querySelector(".budgetform").title.value
+    const budgettitle = document.querySelector(".title")
+    budgettitle.textContent = title
+    formdata["title"] = title
+    const items = document.querySelectorAll(".items")
+    for (item of items) {
+        item.remove()
+    }
+    let budgetitems = document.querySelector(".budgetform").elements.items
+    for (x of budgetitems) {
+        const ptemp = `<p class="items">${x.value}</p>`
+        const form = document.querySelector(".form")
+        form.insertAdjacentHTML("beforeend", ptemp)
+    }
+
 })
 
 function countTotal(array) {
@@ -43,3 +63,4 @@ function displayBudgets(array) {
         budgets.insertAdjacentHTML("afterbegin", budget)
     }
 }
+

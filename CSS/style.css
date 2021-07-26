@@ -138,6 +138,10 @@ a:active {
     padding-bottom: 10px;
 }
 
+.button.finalize {
+    padding-bottom: 10px;
+}
+
 .items {
     color: #333D48;
     margin-bottom: 30px;
