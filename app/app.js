@@ -17,6 +17,12 @@ allbudgets.addEventListener("click", () => {
 const totalbudget = document.querySelector(".totalbudget")
 totalbudget.textContent = countTotal(budgets)
 
+const additem = document.querySelector(".button.additem")
+additem.addEventListener("click", () => {
+    const budgetform = document.querySelector(".budgetform")
+    budgetform.insertAdjacentHTML("beforeend", '<input name="items" value="">')
+})
+
 function countTotal(array) {
     let total = 0;
     for (budget of array) {
