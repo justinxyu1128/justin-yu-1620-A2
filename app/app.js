@@ -12,15 +12,16 @@ allbudgets.addEventListener("click", () => {
     $(".wrapper.view2").hide()
     $(".wrapper.view1").show()
     displayBudgets(budgets)
+    const totalbudget = document.querySelector(".totalbudget")
+    totalbudget.textContent = countTotal(budgets)
 })
 
-const totalbudget = document.querySelector(".totalbudget")
-totalbudget.textContent = countTotal(budgets)
+
 
 const additem = document.querySelector(".button.additem")
 additem.addEventListener("click", () => {
     const budgetform = document.querySelector(".budgetform")
-    budgetform.insertAdjacentHTML("beforeend", '<input name="items" value="" placeholder="Carrots 100">')
+    budgetform.insertAdjacentHTML("beforeend", '<input name="items" value="" placeholder="Carrots (-)100">')
 })
 
 const submit = document.querySelector(".submit")
@@ -48,7 +49,20 @@ submit.addEventListener("click", () => {
     const formtotaltemp = `Total: $${total}`
     formtotal.textContent = formtotaltemp
     formdata["total"] = total
+    const finalize = document.querySelector(".finalize")
+    finalize.addEventListener("click", () => {
+    budgets.push(formdata)
+    const form = document.querySelector(".form")
+    form.remove()
+    const formtotal = document.querySelector(".formtotal")
+    formtotal.insertAdjacentHTML("afterend", '<div class="form"><h2 class="title">Budget Title</h2><p class="items">Carrots $100</p></div>')
+    document.querySelector(".budgetform").reset()
+    document.querySelector(".formtotal").textContent = "Total: $0"
+    document.querySelector(".button.allbudgets").click()
+    })
 })
+
+
 
 function countTotal(array) {
     let total = 0;
